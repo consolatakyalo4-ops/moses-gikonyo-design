@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moses Gikonyo | Premium Interior Design & Painting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px #fff;
+            color: transparent;
+        }
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        .testimonial-card {
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px -15px rgba(0,0,0,0.15);
+        }
+        .contact-input {
+            border-bottom: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+        .contact-input:focus {
+            border-bottom-color: #d4a017;
+        }
+        .before-after {
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+        }
+        .before-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .slider {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            left: 50%;
+            overflow: hidden;
+            transform: translateX(-50%);
+        }
+        .slider-line {
+            position: absolute;
+            width: 4px;
+            background: #fff;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            cursor: ew-resize;
+        }
+        .slider-button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #d4a017;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .active-nav:after {
+            width: 100%;
+        }
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 antialiased">
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md shadow-sm z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-3xl font-bold text-amber-800 tracking-tight">MG<span class="text-gray-800">Design</span></div>
+                <div class="hidden md:flex space-x-10">
+                    <a href="#home" class="nav-link text-gray-800 hover:text-amber-600 transition">Home</a>
+                    <a href="#about" class="nav-link text-gray-800 hover:text-amber-600 transition">About</a>
+                    <a href="#services" class="nav-link text-gray-800 hover:text-amber-600 transition">Services</a>
+                    <a href="#gallery" class="nav-link text-gray-800 hover:text-amber-600 transition">Portfolio</a>
+                    <a href="#testimonials" class="nav-link text-gray-800 hover:text-amber-600 transition">Testimonials</a>
+                    <a href="#contact" class="nav-link text-gray-800 hover:text-amber-600 transition">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-btn">
+                    <i class="fas fa-bars text-2xl text-gray-800"></i>
+                </button>
+            </div>
+            <div class="md:hidden hidden flex-col space-y-4 mt-4 py-4 border-t border-gray-100" id="mobile-menu">
+                <a href="#home" class="nav-link text-gray-800 hover:text-amber-600 transition">Home</a>
+                <a href="#about" class="nav-link text-gray-800 hover:text-amber-600 transition">About</a>
+                <a href="#services" class="nav-link text-gray-800 hover:text-amber-600 transition">Services</a>
+                <a href="#gallery" class="nav-link text-gray-800 hover:text-amber-600 transition">Portfolio</a>
+                <a href="#testimonials" class="nav-link text-gray-800 hover:text-amber-600 transition">Testimonials</a>
+                <a href="#contact" class="nav-link text-gray-800 hover:text-amber-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                 alt="Luxury interior design" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="mb-8">
+                <span class="text-amber-500 font-semibold tracking-widest text-sm uppercase">Premium Interior Design</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">Crafting <span class="text-amber-400">Elegant</span> Spaces</h1>
+            <h2 class="text-xl md:text-2xl mb-8 text-white/90 font-light max-w-2xl mx-auto">Transforming your vision into beautifully designed interiors with precision and artistry</h2>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mt-12">
+                <a href="#contact" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-flex items-center justify-center gap-2">
+                    <i class="fas fa-paint-roller"></i> Get Your Quote
+                </a>
+                <a href="#gallery" class="bg-white/10 hover:bg-white/20 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 inline-flex items-center justify-center gap-2 border border-white/30">
+                    <i class="fas fa-images"></i> View Portfolio
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+            <a href="#about" class="floating-btn inline-block bg-white text-amber-600 p-3 rounded-full shadow-lg">
+                <i class="fas fa-chevron-down text-xl"></i>
+            </a>
+        </div>
+    </section>
+    <section id="about" class="min-h-screen flex items-center justify-center">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4">About Us</h2>
+            <p class="text-lg text-gray-600">We are a premier interior design company dedicated to creating spaces that inspire and delight.</p>
+        </div>
+    </section>
+</body>
+</html>
